@@ -1,0 +1,15 @@
+services:
+    xaocz.menubar.listener:
+        class: xaocz\menubar\event\listener
+        arguments:
+            - @auth
+            - @config
+            - @config_text
+            - @request
+            - @template
+            - @user
+            - @dbal.conn
+            - %core.root_path%
+            - %core.php_ext%
+        tags:
+            - { name: event.listener }

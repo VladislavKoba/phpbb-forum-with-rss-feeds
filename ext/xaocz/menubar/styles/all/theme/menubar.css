@@ -1,0 +1,517 @@
+/* Horizontal menu for phpbb 3.1 and 3.2
+----------------------------------------*/
+.menu-navbar {
+	margin: 10px auto;
+}
+
+.menubar, .menubar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menubar {
+	border-radius: 6px;
+}
+
+.menubar li {
+	float: left;
+	list-style: none;
+	position: relative;
+}
+
+.menubar a {
+	font: bold 11px Arial, Helvetica;
+	float: left;
+	padding: 12px 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.menubar li > ul {
+	background: #fdfdfd;
+	border-radius: 3px;
+	margin: 20px 0 0 0;
+	left: 0;
+	top: 36px;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	z-index: 9999;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.menubar li:hover > ul {
+	opacity: 1;
+	visibility: visible;
+	margin: 0;
+}
+
+.menubar ul li > ul {
+	top: 0;
+	left: 150px;
+	margin: 0 0 0 20px;
+	box-shadow: -1px 0 0 rgba(255,255,255,.3);
+}
+
+.menubar ul li {
+	float: none;
+	display: block;
+	border: 0;
+}
+
+.menubar ul li:last-child {
+	box-shadow: none;
+}
+
+.menubar ul a {
+	padding: 10px;
+	width: 130px;
+	display: block;
+	white-space: nowrap;
+	float: none;
+	text-transform: none;
+}
+
+.menubar ul li:first-child > a {
+	border-radius: 3px 3px 0 0;
+}
+
+.menubar ul li:first-child > a:after {
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #fdfdfd;
+	left: 15px;
+	position: absolute;
+	top: -6px;
+}
+
+.menubar ul ul li:first-child a:after {
+	border-color: transparent #3b3b3b transparent transparent;
+	border-style: solid;
+	border-width: 6px 6px 6px 0;
+	left: -6px;
+	margin-top: -6px;
+	top: 50%;
+}
+
+.menubar ul li:first-child a:hover:after {
+	border-bottom-color: #f3f3f3;
+}
+
+.menubar ul ul li:first-child a:hover:after {
+	border-right-color: #f3f3f3;
+	border-bottom-color: transparent;
+}
+
+.menubar ul li:last-child > a {
+	border-radius: 0 0 3px 3px;
+}
+
+/* Responsive menu
+----------------------------------------*/
+.menubar .dropdown .dropdown-contents {
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+	left: 0 !important;
+	max-height: none;
+	max-width: none !important;
+	overflow: visible;
+}
+
+.menubar .dropdown li {
+	padding: 0;
+}
+
+.menubar .dropdown a {
+	width: auto;
+}
+
+.menubar .dropdown > ul > li:first-child > a:after {
+	border-bottom: 0;
+}
+
+.menubar .dropdown li > ul {
+	background: none;
+	border-radius: 0;
+	border-width: 0px 0 0 0;
+	box-shadow: none;
+	left: initial;
+	margin: 0;
+	position: relative;
+	opacity: 1;
+	visibility: visible;
+}
+
+.menubar .dropdown li:hover > ul {
+	margin: 0;
+}
+
+.menubar .dropdown li > ul li {
+	box-shadow: none;
+}
+
+.menubar .dropdown li > ul a {
+	padding-left: 10px;
+}
+
+.menubar .dropdown li > ul ul a {
+	padding-left: 25px;
+}
+
+.menubar .dropdown > ul > li > ul li a:after {
+	display: none;
+}
+
+.menubar .dropdown > ul > li > ul li a:before {
+	content: "\2014";
+	margin-right: 7px;
+	opacity: .2;
+}
+
+#menubar #tabs {
+	margin: 0;
+}
+
+#menubar #tabs .dropdown {
+	top: 27px;
+	left: 0;
+	margin: 0 !important;
+}
+
+#tabs .menubar .tab {
+	border: none;
+	box-shadow: none;
+	float: right;
+	font-size: 1.1em;
+	line-height: 2.2em;
+	position: static;
+}
+
+#tabs .menubar .dropdown li {
+	margin: 0;
+	text-align: left;
+}
+
+#tabs .menubar .tab > a {
+	background: transparent;
+	border-radius: 0;
+	border-width: 0;
+	box-shadow: none;
+	float: none;
+	line-height: 20px;
+	margin: 5px 15px 5px 10px;
+	padding: 3px 0;
+}
+
+.responsive-tab .responsive-tab-link:before {
+	left: 0;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	.menu-navbar #tabs .menubar {
+		border-radius: 0;
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+}
+
+/* Fixed menubar
+---------------------------------------- */
+#menubar.fixed-nav .menubar { 
+	z-index: 9; 
+	position: fixed; 
+	top: 0; 
+	width: 100%;
+	max-width: 1152px;
+	margin: 0 !important;
+}
+
+#menubar.fixed-nav {
+	height: 36px;
+}
+
+@media only screen and (max-width: 1220px), only screen and (max-device-width: 1220px) {
+	#menubar.fixed-nav .menubar {
+		left: 28px;
+		right: 28px;
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+	#menubar.fixed-nav .menubar {
+		left: 0;
+		right: 0;
+	}
+}
+
+/* Colours style
+---------------------------------------- */
+
+/* Menubar-black
+----------------------------------------*/
+.menubar-black {
+	background-color: #111;
+	background-image: -moz-linear-gradient(#444, #111);
+	background-image: -webkit-linear-gradient(#444, #111);
+	background-image: linear-gradient(#444, #111);
+	box-shadow: 0 1px 1px #acca24, 0 1px 0 #666 inset;
+}
+
+.menubar-black li {
+	border-right: 1px solid #222;
+	box-shadow: 1px 0 0 #444;
+}
+
+.menubar-black a {
+	color: #999;
+	text-shadow: 0 1px 0 #000;
+}
+
+.menubar-black li:hover > a {
+	color: #fafafa;
+}
+
+.menubar-black li > ul {
+	background: #444;
+	background: -moz-linear-gradient(#444, #111);
+	background: -webkit-linear-gradient(#444, #111);
+	background: linear-gradient(#444, #111);
+	box-shadow: 0 -1px 0 rgba(255,255,255,.3);
+}
+
+.menubar-black ul li {
+	box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+}
+
+.menubar-black ul a:hover {  
+	background-color: #0186ba;  
+	background-image: -moz-linear-gradient(#acca24, #6f8314);  
+	background-image: -webkit-linear-gradient(#acca24, #6f8314);  
+	background-image: linear-gradient(#acca24, #6f8314);  
+}
+
+.menubar-black ul li:first-child a:after {
+	border-bottom-color: #444;
+}
+
+.menubar-black ul li:first-child a:hover:after {
+	border-bottom-color: #acca24;
+}
+
+.menubar-black ul ul li:first-child a:hover:after {
+	border-right-color: #acca24;
+	border-bottom-color: transparent;
+}
+
+/* Responsive menu - menubar-black */
+.menubar-black .dropdown .dropdown-contents {
+	background-color: #111;
+	background-image: -moz-linear-gradient(#444, #111);
+	background-image: -webkit-linear-gradient(#444, #111);
+	background-image: linear-gradient(#444, #111);
+	border-color: #111;
+	box-shadow: 0 -1px 0 rgba(255,255,255,.3);
+	padding: 0;
+}
+
+.menubar-black .dropdown .pointer {
+	border-color: #111 transparent;
+}
+
+.menubar-black .dropdown .pointer-inner {
+	border-color: #444 transparent;
+}
+
+.menubar-black .responsive-tab .responsive-tab-link:before {
+	border-color: #999;
+}
+
+.menubar-black .responsive-tab .responsive-tab-link:hover:before,
+.menubar-black .responsive-tab.dropdown-visible .responsive-tab-link:before {
+	border-color: #FFF;
+}
+
+.menubar-black .dropdown ul ul li:first-child a:after {
+	border-left-color: #3b3b3b;
+}
+
+.menubar-black .dropdown > ul > li > ul li:first-child a:hover:after {
+	border-left-color: #acca24;
+}
+
+/* Menubar-pro
+----------------------------------------*/
+.menubar-pro {
+	background-color: #ECF1F3;
+}
+
+.menubar-pro li {
+	border-right: 1px solid #D3E0EB;
+}
+
+.menubar-pro a {
+	color: #28313F;
+	text-shadow: 0 0 0 #ECF1F3;
+}
+
+.menubar-pro li:hover > a {
+	color: #000;
+}
+
+.menubar-pro li > ul {
+	background-color: #D2E0EB;
+}
+
+.menubar-pro li ul, .menubar-pro ul li > ul {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.menubar-pro ul li {
+	box-shadow: 0 1px 0 #FFFFFF;
+}
+
+.menubar-pro ul li:first-child > a:after {
+	border-bottom: 6px solid #D2E0EB;
+}
+
+.menubar-pro ul ul li:first-child a:after {
+	border-right-color: #D2E0EB;
+}
+
+.menubar-pro ul li:first-child a:hover:after {
+	border-bottom-color: #F6F4D0;
+}
+
+.menubar-pro ul ul li:first-child a:hover:after {
+	border-right-color: #F6F4D0;
+}
+
+.menubar-pro .dropdown  ul ul li:first-child a:after {
+	border-left-color: #D2E0EB;
+}
+
+.menubar-pro .dropdown > ul > li > ul li:first-child a:hover:after {
+	border-left-color: #F6F4D0;
+}
+
+.menubar-pro ul a:hover {
+	background-color: #F6F4D0;
+}
+
+/* Responsive menu - menubar-pro */
+.menubar-pro .dropdown .dropdown-contents {
+	background-color: #CADCEB;
+	border-color: #CADCEB;
+	padding: 0;
+}
+
+.menubar-pro .dropdown .pointer,
+.menubar-pro .dropdown .pointer-inner {
+	border-color: #CADCEB transparent;
+}
+
+.menubar-pro .responsive-tab .responsive-tab-link:before {
+	border-color: #28313F;
+}
+
+.menubar-pro .responsive-tab .responsive-tab-link:hover:before {
+	border-color: #000;
+}
+
+/* menubar-pro2
+----------------------------------------*/
+.menubar-pro2 {
+	background-color: #FB6A0D;
+	background-image: -moz-linear-gradient(#ff9551, #FB6A0D);
+	background-image: -webkit-linear-gradient(#ff9551, #FB6A0D);
+	background-image: linear-gradient(#ff9551, #FB6A0D);
+}
+
+.menubar-pro2 li {
+	border-right: 1px solid #D3E0EB;
+}
+
+.menubar-pro2 a {
+	color: #FFF;
+}
+
+.menubar-pro2 ul a {
+	color: #28313F;
+}
+.menubar-pro2 li:hover {
+	background-color: #E4E9EE;
+}
+.menubar-pro2 li:hover > a {
+	color: #323232;
+}
+
+.menubar-pro2 li > ul {
+	background-color: #F1F8FF;
+	background-image: -moz-linear-gradient(top, #F1F8FF 0%, #CADCEB 100%);
+	background-image: -webkit-linear-gradient(top, #F1F8FF 0%, #CADCEB 100%);
+	background-image: linear-gradient(to bottom, #F1F8FF 0%, #CADCEB 100%);
+	border: 1px solid #B9B9B9;
+}
+
+.menubar-pro2 li ul, .menubar-pro2 ul li > ul {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.menubar-pro2 ul li {
+	box-shadow: 0 1px 0 #B9B9B9, 0 2px 0 #FFFFFF;
+}
+
+.menubar-pro2 ul li:first-child > a:after {
+	border-bottom: 6px solid #F1F8FF;
+}
+
+.menubar-pro2 ul ul li:first-child a:after {
+	border-right-color: #F1F8FF;
+}
+
+.menubar-pro2 ul li:first-child a:hover:after {
+	border-bottom-color: #CFE1F6;
+}
+
+.menubar-pro2 ul ul li:first-child a:hover:after {
+	border-right-color: #CFE1F6;
+}
+
+.menubar-pro2 .dropdown  ul ul li:first-child a:after {
+	border-left-color: #F1F8FF;
+}
+
+.menubar-pro2 .dropdown > ul > li > ul li:first-child a:hover:after {
+	border-left-color: #CFE1F6;
+}
+
+.menubar-pro2 ul a:hover {
+	background-color: #CFE1F6;
+	color: #000;
+}
+
+/* Responsive menu - menubar-pro2 */
+.menubar-pro2 .dropdown .dropdown-contents {
+	background-color: #F1F8FF;
+	background-image: -moz-linear-gradient(top, #F1F8FF 0%, #CADCEB 100%);
+	background-image: -webkit-linear-gradient(top, #F1F8FF 0%, #CADCEB 100%);
+	background-image: linear-gradient(to bottom, #F1F8FF 0%, #CADCEB 100%);
+	padding: 0;
+}
+
+.menubar-pro2 .dropdown .pointer-inner {
+	border-color: #F1F8FF transparent;
+}
+
+.menubar-pro2 .responsive-tab .responsive-tab-link:before {
+	border-color: #FFFFFF;
+}
+
+.menubar-pro2 .responsive-tab .responsive-tab-link:hover:before,
+.menubar-pro2 .responsive-tab.dropdown-visible .responsive-tab-link:before {
+	border-color: #A8D8FF;
+}

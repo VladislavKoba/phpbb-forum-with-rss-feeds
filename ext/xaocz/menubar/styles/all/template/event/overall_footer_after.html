@@ -1,0 +1,17 @@
+<!-- IF S_MENUBAR_FIXED -->
+<script type="text/javascript">
+(function(){
+ 
+	var nav = $('.menu-navbar');
+ 
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > <!-- IF S_MENUBAR_FIXED_SCROLL -->{S_MENUBAR_FIXED_SCROLL}<!-- ELSE --><!-- IF S_MENUBAR_POSITION == 1 -->116<!-- ELSE -->186<!-- ENDIF --><!-- ENDIF -->) {
+			nav.addClass("fixed-nav");
+		} else {
+			nav.removeClass("fixed-nav");
+		}
+	});
+ 
+})();
+</script>
+<!-- ENDIF -->

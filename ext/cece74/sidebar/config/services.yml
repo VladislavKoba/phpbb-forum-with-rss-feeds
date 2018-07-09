@@ -1,0 +1,10 @@
+services:
+    cece74.sidebar.listener:
+        class: cece74\sidebar\event\listener
+        arguments:
+            - @controller.helper
+            - @template
+            - @config
+            - %core.php_ext%
+        tags:
+            - { name: event.listener }

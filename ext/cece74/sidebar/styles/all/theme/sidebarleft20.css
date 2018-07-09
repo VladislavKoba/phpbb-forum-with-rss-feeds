@@ -1,0 +1,14 @@
+@media screen and (min-width: 970px){
+
+#page-body {
+    margin: 4px 0;
+    clear: both;
+    width:79%;
+    float:right;
+}  
+
+ .page-sidebar {
+float:left;
+margin-top:4px;
+width:20%;
+}  

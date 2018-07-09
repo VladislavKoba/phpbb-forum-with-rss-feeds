@@ -1,0 +1,100 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_AD_TITLE}</h1>
+<p>{L_AD_EXPLAIN}</p>
+
+
+<form id="acp_sidebar" method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{L_AD_CONFIG}</legend>
+		<dl>
+			<dt><label id="ad_status" for="ad_status">{L_AD_STATUS}{L_COLON}</label></dt>
+			<dd><input type="radio" class="radio" name="ad_status" value="1" <!-- IF AD_STATUS -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+				<input type="radio" class="radio" name="ad_status" value="0" <!-- IF not AD_STATUS -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		<dl>
+			<dt><label id="ad_type" for="ad_type">{L_AD_TYPE}{L_COLON}</label><br /><span>{L_AD_TYPE_EXPLAIN}</span></dt>
+			<dd><input type="radio" class="radio" name="ad_type" value="1" <!-- IF AD_TYPE -->checked="checked"<!-- ENDIF -->/> {L_LEFT} &nbsp; 
+				<input type="radio" class="radio" name="ad_type" value="0" <!-- IF not AD_TYPE -->checked="checked"<!-- ENDIF --> /> {L_RIGHT}</dd>
+		</dl>
+		
+		<dl>
+			<dt><label id="ad_forum3" for="ad_forum3">{L_AD_FORUM3}</label></dt>
+			<dd><input type="radio" class="radio" name="ad_forum3" value="1" <!-- IF AD_FORUM3 -->checked="checked"<!-- ENDIF -->/> {L_ACP_15} &nbsp;
+				<input type="radio" class="radio" name="ad_forum3" value="0" <!-- IF not AD_FORUM3 -->checked="checked"<!-- ENDIF --> /> {L_ACP_20}</dd>
+		</dl>
+
+	<dl>
+			<dt><label id="ad_forum7" for="ad_forum7">{L_AD_FORUM7}</label></dt>
+			<dd><input type="radio" class="radio" name="ad_forum7" value="1" <!-- IF AD_FORUM7 -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp;
+				<input type="radio" class="radio" name="ad_forum7" value="0" <!-- IF not AD_FORUM7 -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>			
+	
+		<dl>
+			<dt><label>{L_AD_VERSION_OLD}{L_COLON}</label></dt>
+			<dd><strong>{S_VERSIONOLD}</strong></dd>
+		</dl>
+		<!-- IF S_VERSIONNEW --><dl>
+			<dt><label>{L_AD_VERSION_NEW}{L_COLON}</label></dt>
+			<dd><strong><a href="{U_VERSIONCHECK}" title="{L_MORE_INFORMATION}" style="color: #228822;" onclick="window.open(this.href);return false;">{S_VERSIONNEW}</a></strong></dd>
+		</dl><!-- ENDIF -->
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_AD_SELECT}{L_COLON}</legend>
+		
+		<dl>
+			<dt><label id="ad_facebookpage" for="facebookpage">{L_AD_FACEBOOKPAGE}</label></dt>
+			<dd><input type="radio" class="radio" name="ad_facebookpage" value="1" <!-- IF AD_FACEBOOKPAGE -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp;
+				<input type="radio" class="radio" name="ad_facebookpage" value="0" <!-- IF not AD_FACEBOOKPAGE -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+
+				<dl>
+		<dt><label for="ad_urlpage">{L_ACP_AD_URLPAGE}</label><br /><span>{L_ACP_AD_URLPAGE_EXPLAIN}</span></dt>
+		<dd>
+		<input type="text" name="ad_urlpage" id="ad_urlpage" value="{AD_URLPAGE}" size="50" />
+		</dd>
+	</dl>
+		
+<hr />		
+		<dl>
+			<dt><label id="ad_firstpost" for="ad_firstpost">{L_AD_FIRSTPOST}</label></dt>
+			<dd><input type="radio" class="radio" name="ad_firstpost" value="1" <!-- IF AD_FIRSTPOST -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+				<input type="radio" class="radio" name="ad_firstpost" value="0" <!-- IF not AD_FIRSTPOST -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>	
+
+			<dl>
+		<dt><label for="ad_code_slot">{L_ACP_AD_CODE_SLOT}</label><br /><span>{L_ACP_AD_CODE_SLOT_EXPLAIN}</span></dt>
+		<dd>
+		<input type="text" name="ad_code_slot" id="ad_code_slot" value="{AD_CODE_SLOT}" size="50" />
+		</dd>
+	</dl>	
+		
+				<dl>
+		<dt><label for="ad_code">{L_ACP_AD_CODE}</label><br /><span>{L_ACP_AD_CODE_EXPLAIN}</span></dt>
+		<dd>
+		<input type="text" name="ad_code" id="ad_code" value="{AD_CODE}" size="50" />
+		</dd>
+	</dl>
+	
+					<dl>
+		<dt><label for="sidebar_height">{L_ACP_SIDEBAR_HEIGHT}</label><br /><span>{L_ACP_SIDEBAR_HEIGHT}</span></dt>
+		<dd>
+		<input type="text" name="sidebar_height" id="sidebar_height" value="{SIDEBAR_HEIGHT}" size="50" />
+		</dd>
+	</dl>	
+
+<hr />	
+			<dl>
+			<dt><label for="sidebar_text">{L_ACP_SIDEBAR_TEXT}{L_COLON}</label><br />
+			<dd><textarea name="sidebar_text" id="sidebar_text" rows="3" cols="40">{SIDEBAR_TEXT}</textarea></dd>
+		</dl>
+
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		{S_FORM_TOKEN}
+		</p>
+	</fieldset>
+</form>
+<!-- INCLUDE overall_footer.html -->

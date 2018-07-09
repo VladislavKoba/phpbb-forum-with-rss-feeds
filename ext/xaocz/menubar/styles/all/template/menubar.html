@@ -1,0 +1,15 @@
+<!-- IF S_MENUBAR and (S_MENUBAR_CONTENT or S_MENUBAR_INDEX) -->
+<div id="menubar" class="menu-navbar" role="navigation">
+	<div id="tabs" class="tabs inner">
+
+	<ul class="menubar <!-- IF S_MENUBAR_NEW_CLASS and S_MENUBAR_STYLES -->{S_MENUBAR_NEW_CLASS}<!-- ELSE -->menubar-pro2<!-- ENDIF -->" role="menubar">
+
+		<!-- IF S_MENUBAR_INDEX --><li data-skip-responsive="true"><a href="{U_INDEX}" data-navbar-reference="index">{L_INDEX}</a></li><!-- ENDIF -->
+		{S_MENUBAR_CONTENT}
+
+	</ul>
+	
+	</div>
+	<div id="adunits-headerbar">{ADUNITS_POST_TEXT_HEADERBAR}</div>
+</div>
+<!-- ENDIF -->
